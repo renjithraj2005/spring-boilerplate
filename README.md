@@ -3,11 +3,6 @@
 
 
 
-The application emulates the main features of *Twitter*:
-* login, logout;
-* account management (registration, editing, deleting, search by substring);
-
-
 ## Requirements
 
 * [JDK 8+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
