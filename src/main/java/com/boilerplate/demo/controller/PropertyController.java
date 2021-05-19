@@ -2,6 +2,7 @@ package com.boilerplate.demo.controller;
 
 import com.boilerplate.demo.common.RestResources;
 import com.boilerplate.demo.domain.model.property.Property;
+import com.boilerplate.demo.model.common.ListingType;
 import com.boilerplate.demo.model.common.PaginableSortableResponse;
 import com.boilerplate.demo.model.common.SortedDirection;
 import com.boilerplate.demo.model.property.PropertyFilter;
@@ -82,17 +83,16 @@ public class PropertyController {
                                        @RequestParam(required = false) final SortedDirection sortedDirection,
 
                                        @ApiParam(
-                                               name =  "isApproved",
-                                               value = "put true to for all approved propery list",
+                                               name =  "listingType",
+                                               format = "APPROVED or PENDING or ALL case sensitive",
                                                defaultValue = "true")
-                                       @RequestParam(required = false) final Boolean isApproved) throws IOException {
+                                       @RequestParam(required = false) final ListingType listingType) throws IOException {
 
 
-        boolean approved = BooleanUtils.isTrue(isApproved);
 
         PropertyFilter filter = new PropertyFilter()
                 .setQuery(query)
-                .setApproved(approved)
+                .setListingType(listingType)
                 .setPageNr(pageNr)
                 .setPageSize(pageSize)
                 .setSortedDirection(sortedDirection);

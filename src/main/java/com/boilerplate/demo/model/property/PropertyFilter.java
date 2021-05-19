@@ -1,11 +1,12 @@
 package com.boilerplate.demo.model.property;
 
+import com.boilerplate.demo.model.common.ListingType;
 import com.boilerplate.demo.model.common.PaginableSortableFilter;
 import com.boilerplate.demo.model.common.SortedDirection;
 
 public class PropertyFilter extends PaginableSortableFilter<PropertyFilter> {
     private String query;
-    private boolean isApproved;
+    private ListingType listingType;
 
     public PropertyFilter() {
     }
@@ -29,12 +30,12 @@ public class PropertyFilter extends PaginableSortableFilter<PropertyFilter> {
         return this;
     }
 
-    public boolean isApproved() {
-        return isApproved;
+    public ListingType getListingType() {
+        return listingType;
     }
 
-    public PropertyFilter setApproved(boolean approved) {
-        isApproved = approved;
+    public PropertyFilter setListingType(ListingType listingType) {
+        this.listingType = listingType;
         return this;
     }
 }

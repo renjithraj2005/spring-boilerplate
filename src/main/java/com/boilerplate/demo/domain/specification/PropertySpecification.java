@@ -2,6 +2,7 @@ package com.boilerplate.demo.domain.specification;
 
 import com.boilerplate.demo.domain.model.property.Property;
 import com.boilerplate.demo.helper.utils.RegexUtils;
+import com.boilerplate.demo.model.common.ListingType;
 import com.boilerplate.demo.model.property.PropertyFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.util.Pair;
@@ -45,7 +46,15 @@ public class PropertySpecification extends PaginableSortableSpecification<Proper
             );
         }
 
-        filters.add(criteria.equal(root.get("isApproved"), rateFilter.isApproved()));
+        if(this.rateFilter.getListingType() != null){
+            if(this.rateFilter.getListingType() == ListingType.APPROVED){
+                filters.add(criteria.equal(root.get("isApproved"), true));
+            }
+            if(this.rateFilter.getListingType() == ListingType.PENDING){
+                filters.add(criteria.equal(root.get("isApproved"), false));
+            }
+
+        }
 
         return filters.isEmpty() ? null : criteria.and(filters.toArray(new Predicate[filters.size()]));
     }
