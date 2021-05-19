@@ -27,3 +27,14 @@ The application emulates the main features of *Twitter*:
 1. Log in with existing accounts (`jsmith/password`) or create a new account
 
 ### Obtain Token
+
+```curl
+curl --location --request POST 'http://localhost:8080/api/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic b2F1dGgyLWNsaWVudDpvYXV0aDItc2VjcmV0' \
+--data-raw '{
+    "username": "admin@demo.com",
+    "password": "123@Admin",
+    "grant_type": "password"
+}'
+```
