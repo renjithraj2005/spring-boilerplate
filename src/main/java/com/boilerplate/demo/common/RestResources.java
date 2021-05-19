@@ -20,7 +20,7 @@ public interface RestResources {
 
 	String PROPERTY_ROOT = "/property";
 	String PROPERTY_POST_SAVE = "/create";
-	String PROPERTY_PUT_UPDATE = "/update";
+	String PROPERTY_PUT_UPDATE = "/update/{id}";
 	String PROPERTY_PUT_APPROVE = "/approve/{id}";
 	String PROPERTY_GET_SEARCH = "/search";
 }

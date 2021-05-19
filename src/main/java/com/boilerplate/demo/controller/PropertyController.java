@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,8 +26,23 @@ public class PropertyController {
 
     @PostMapping(value = RestResources.PROPERTY_POST_SAVE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Create a Chat")
-    public ResponseEntity<?> createComment(@RequestBody PropertyRequest propertyRequest) throws Exception {
-        Property chat = propertyService.createProperty(propertyRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(chat);
+    public ResponseEntity<?> createProperty(@RequestBody PropertyRequest propertyRequest) throws Exception {
+        Property property = propertyService.createProperty(propertyRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(property);
+    }
+
+    @PutMapping(value = RestResources.PROPERTY_PUT_UPDATE)
+    @ApiOperation(value = "Update Existing Property")
+    public ResponseEntity<?> updateProperty(@PathVariable Long id,
+                                                       @RequestBody PropertyRequest propertyRequest) throws Exception{
+        Property property = propertyService.updateProperty(propertyRequest,id);
+        return ResponseEntity.ok().body(property);
+    }
+
+    @PutMapping(value = RestResources.PROPERTY_PUT_APPROVE)
+    @ApiOperation(value = "Approve Existing Property")
+    public ResponseEntity<?> approveProperty(@PathVariable Long id) throws Exception{
+        Property property = propertyService.approveProperty(id);
+        return ResponseEntity.ok().body(property);
     }
 }

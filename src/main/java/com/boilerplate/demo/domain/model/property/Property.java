@@ -20,7 +20,7 @@ public class Property extends AuditableEntity {
     private String location;
 
     @Column(name = "is_approved")
-    private Boolean is_approved = false;
+    private Boolean isApproved = false;
 
     public String getPropertyName() {
         return propertyName;
@@ -46,11 +46,11 @@ public class Property extends AuditableEntity {
         this.location = location;
     }
 
-    public Boolean getIs_approved() {
-        return is_approved;
+    public Boolean getApproved() {
+        return isApproved;
     }
 
-    public void setIs_approved(Boolean is_approved) {
-        this.is_approved = is_approved;
+    public void setApproved(Boolean approved) {
+        isApproved = approved;
     }
 }
