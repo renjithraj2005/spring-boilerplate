@@ -70,7 +70,6 @@ public class PropertyControllerIntegrationTest extends AbstractControllerTest{
                 .param(P_pageSize, "10")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .with(user(client1())))
-                .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalRecords", is(1)));
 
@@ -80,7 +79,6 @@ public class PropertyControllerIntegrationTest extends AbstractControllerTest{
                 .param(P_pageSize, "10")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .with(user(client1())))
-                .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalRecords", is(0)));
 
@@ -90,7 +88,6 @@ public class PropertyControllerIntegrationTest extends AbstractControllerTest{
                 .param(P_pageSize, "10")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .with(user(client1())))
-                .andDo(MockMvcResultHandlers.print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalRecords", is(1)));
     }
