@@ -16,8 +16,6 @@ public class BaseEntity implements Comparable<BaseEntity>, Serializable {
     @Id
     private Long id;
 
-    @Column(name = "client_id", nullable = false)
-    private String clientId;
 
     @Override
     public int compareTo(final BaseEntity obj) {
@@ -47,11 +45,4 @@ public class BaseEntity implements Comparable<BaseEntity>, Serializable {
         this.id = id;
     }
 
-    public String getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
 }
