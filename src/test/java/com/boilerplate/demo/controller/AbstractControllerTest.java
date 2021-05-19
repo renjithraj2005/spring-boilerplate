@@ -73,6 +73,9 @@ public class AbstractControllerTest {
 	protected MockMvc mockMvc;
 
 
+	public static final String P_listingType = "listingType";
+	public static final String P_pageNr = "pageNr";
+	public static final String P_pageSize = "pageSize";
 	public static final String P_id = "id";
 	public static final String P_email = "email";
 
