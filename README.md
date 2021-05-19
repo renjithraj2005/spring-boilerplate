@@ -24,7 +24,7 @@ The application emulates the main features of *Twitter*:
 
    http://localhost:8080
 
-1. Log in with existing accounts (`jsmith/password`) or create a new account
+1. Log in with existing accounts (`admin@demo.com/123@Admin`) or create a new account
 
 ### Obtain Token
 
