@@ -47,3 +47,9 @@ Response will have the Bearer Token. Use this with every request like
 ### Swagger API Documentation 
 
 http://localhost:8080/api/swagger-ui.html
+
+### Run Test
+
+```aidl
+mvn clean test
+```
