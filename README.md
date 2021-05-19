@@ -16,10 +16,6 @@ The application emulates the main features of *Twitter*:
 ## Running
 
 
-### Spring Boot, JSP
-
-
-
 1. From the command line with *Maven*:
 
    `mvn spring-boot:run` 
