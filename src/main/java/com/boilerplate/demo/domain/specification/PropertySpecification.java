@@ -1,18 +1,15 @@
 package com.boilerplate.demo.domain.specification;
 
 import com.boilerplate.demo.domain.model.property.Property;
-import com.boilerplate.demo.helper.utils.RegexUtils;
 import com.boilerplate.demo.model.common.ListingType;
 import com.boilerplate.demo.model.property.PropertyFilter;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.math3.util.Pair;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class PropertySpecification extends PaginableSortableSpecification<Property, PropertyFilter> {
