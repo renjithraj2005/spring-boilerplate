@@ -38,3 +38,12 @@ curl --location --request POST 'http://localhost:8080/api/oauth/token' \
     "grant_type": "password"
 }'
 ```
+
+Response will have the Bearer Token. Use this with every request like
+```aidl
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbkBkZW1vLmNvbSIsInNjb3BlIjpbIndyaXRlIiwicmVhZCJdLCJpZCI6ImZmODA4MDgxNzk4NGQ1NDIwMTc5ODRkNTUwYWMwMDAxIiwiZXhwIjoxNjIxNDQyMTgxLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IktzbjR3RnBBVjBRbVQtQTduSERpRHhlZlZCdyIsImNsaWVudF9pZCI6Im9hdXRoMi1jbGllbnQifQ.hOfEJSH0qbppBAld0dPcWPNCU2CNvVLaG91cvcg0RKE"
+```
+
+### Swagger API Documentation 
+
+http://localhost:8080/api/swagger-ui.html
