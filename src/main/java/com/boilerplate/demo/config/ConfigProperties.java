@@ -31,6 +31,12 @@ public class ConfigProperties {
     @Value("${swagger.api.key.name}")
     private String swaggerApiKeyName;
 
+    @Value("${demo.admin.id}")
+    private String adminId;
+
+    @Value("${demo.admin.password}")
+    private String adminPassword;
+
 
     public int getAccessTokenExpireTime() {
         return accessTokenExpireTime;
@@ -78,5 +84,21 @@ public class ConfigProperties {
 
     public void setSwaggerApiKeyName(String swaggerApiKeyName) {
         this.swaggerApiKeyName = swaggerApiKeyName;
+    }
+
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
     }
 }

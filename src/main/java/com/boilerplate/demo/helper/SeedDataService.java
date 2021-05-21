@@ -61,10 +61,10 @@ public class SeedDataService {
     }
 
     @Transactional
-    public void createUser(String role) {
+    public void createUser(String username, String password, String role) {
         User user = new User();
-        user.setUsername("admin@demo.com");
-        user.setPassword(passwordEncoder.encode("123@Admin"));
+        user.setUsername(username);
+        user.setPassword(passwordEncoder.encode(password));
         user.setFirstName("Admin");
         user.setLastName("User");
         user.setCompanyName("Company");

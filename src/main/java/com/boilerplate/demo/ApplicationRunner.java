@@ -33,6 +33,6 @@ public class ApplicationRunner {
 		ConfigProperties config = context.getBean("appConfigProperties", ConfigProperties.class);
 		seedService.insertRoles();
 		seedService.createOAuth2Client(config.getDefaultOAuth2Client(), config.getDefaultOAuth2ClientSecret());
-		seedService.createUser("ROLE_ADMIN");
+		seedService.createUser(config.getAdminId(), config.getAdminPassword(),"ROLE_ADMIN");
 	}
 }
